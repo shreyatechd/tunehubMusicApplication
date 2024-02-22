@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+
+<h1>Songs!!</h1>
+<table border="1">
+<thead>
+<tr>
+<td>Name</td>
+<td>Artist</td>
+<td>Genre</td>
+<td>Link</td>
+</tr>
+</thead>
+<tbody>
+<tr th:each="songlist : ${songlist}">
+<td th:text="${songlist.name}"></td>
+<td th:text="${songlist.artist}"></td>
+<td th:text="${songlist.genre}"></td>
+<td th:text="${songlist.link}"></td>
+</tr>
+</tbody>
+
+</table>
+<h1>Your songs are Loading....</h1>
+<br/><br/>
+<table border="1">
+<thead>
+<tr>
+<td>Name</td>
+<td>Artist</td>
+<td>Genre</td>
+<td>Link</td>
+</tr>
+</thead>
+<tbody>
+<tr th:each="songlist:${songlist}">
+<td th:text="${songlist.name}"></td>
+<td th:text="${songlist.artist}"></td>
+<td th:text="${songlist.genre}"></td>
+<td th:text="${songlist.link}"></td>
+</tr>
+</tbody>
+
+</table>
+<a href="/view-playlist"><button>view Playlist</button></a>
+<table border="1">
+<thead>
+<tr>
+<th>Playlist Id</th>
+<th>Playlist Name</th>
+<th>Playlist Songs</th>
+
+</tr>
+</thead>
+<tbody>
+<tr th:each="pl:${plist}">
+<td th:text="${pl.id}"></td>
+<td th:text="${pl.name}"></td>
+<td ><ul>
+       <li th:each="s : ${pl.song}">
+        <h6 th:text="${s.link}"></h6>
+      </li>
+</ul>
+</td>
+
+</tr>
+</tbody>
+
+</table>
+</body>
+</html>
